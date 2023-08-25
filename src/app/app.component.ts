@@ -12,7 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  opened = false;
+  protected opened = false;
+  protected currentYear = new Date().getFullYear();
+  protected username = 'Danilo Rodrigues Teixeira';
 
   setSidenavStatus(isSidenavOpen: boolean): void {
     this.opened = isSidenavOpen;

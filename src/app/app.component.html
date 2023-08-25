@@ -4,6 +4,7 @@
     (openedChange)="setSidenavStatus($event)"
     mode="side"
   >
+    <h3>Conteúdo do Sidenav</h3>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -12,15 +13,15 @@
         <mat-icon>menu</mat-icon>
       </button>
 
-      <small> Olá, usuário! </small>
+      <small> Olá, {{ username }}! </small>
     </div>
 
     <div class="main-content">
-      <h1>Bem vindo ao Mat-sidenav!</h1>
+      <h1>Conteúdo da Página</h1>
     </div>
 
     <small class="footer">
-      &copy; 2023. Todos os Direitos Reservados - Versão: 1.0.0
+      &copy; {{ currentYear }}. Todos os Direitos Reservados - Versão: 1.0.0
     </small>
   </mat-sidenav-content>
 </mat-sidenav-container>
