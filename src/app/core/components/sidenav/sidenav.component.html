@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    [opened]="opened"
+    (openedChange)="setSidenavStatus($event)"
+    [mode]="(isSmallScreen$ | async) ? 'over' : 'side'"
+  >
+    <h3>Conteúdo do Sidenav</h3>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="open-close-sidenav-container">
+      <button mat-icon-button (click)="onToggleMenuClick()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <small> Olá! Seja bem vindo {{ username }}! </small>
+    </div>
+
+    <h1>Conteúdo da Página</h1>
+
+    <small class="footer">
+      &copy; {{ currentYear }} |
+      <strong>Danilo Rodrigues Teixeira.</strong> Todos os Direitos Reservados |
+      Versão: 1.0.0
+    </small>
+  </mat-sidenav-content>
+</mat-sidenav-container>
