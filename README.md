@@ -1,5 +1,9 @@
 # Sidenav
 
+## Sistema em funcionamento
+![MatSidenav](https://github.com/DaniloTeixeira/mat-sidenav-example/assets/48885647/6c83d7a8-21ab-4238-ba68-9a337e822ae6)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 ## Development server
