@@ -8,20 +8,22 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div class="open-close-sidenav-container">
+    <header class="open-close-sidenav-container">
       <button mat-icon-button (click)="onToggleMenuClick()">
         <mat-icon>menu</mat-icon>
       </button>
 
       <small> Olá! Seja bem vindo {{ username }}! </small>
-    </div>
+    </header>
 
-    <h1>Conteúdo da Página</h1>
+    <main>
+      <h1>Conteúdo da Página</h1>
+    </main>
 
-    <small class="footer">
+    <footer>
       &copy; {{ currentYear }} |
       <strong>Danilo Rodrigues Teixeira.</strong> Todos os Direitos Reservados |
       Versão: 1.0.0
-    </small>
+    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

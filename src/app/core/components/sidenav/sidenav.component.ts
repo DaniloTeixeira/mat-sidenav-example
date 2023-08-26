@@ -18,10 +18,11 @@ import { ScreenService } from '../../services/screen';
 export class SidenavComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
 
-  protected isSmallScreen$ = inject(ScreenService).isSmallScreen$;
   protected opened = false;
-  protected currentYear = new Date().getFullYear();
   protected username = 'Danilo';
+  protected currentYear = new Date().getFullYear();
+  protected screenWidth$ = inject(ScreenService).screenWidth$;
+  protected isSmallScreen$ = inject(ScreenService).isSmallScreen$;
 
   ngOnInit(): void {
     this.setOpenedSidenav();
@@ -36,10 +37,10 @@ export class SidenavComponent implements OnInit {
   }
 
   private setOpenedSidenav(): void {
-    this.isSmallScreen$
+    this.screenWidth$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((isSmallScreen) => {
-        if (isSmallScreen) {
+      .subscribe((width) => {
+        if (width <= 1000) {
           this.opened = false;
           return;
         }
