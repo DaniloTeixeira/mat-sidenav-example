@@ -11,9 +11,9 @@ import {
   providedIn: 'root',
 })
 export class ScreenService {
-  public screenWidth$ = new BehaviorSubject(window.innerWidth);
+  screenWidth$ = new BehaviorSubject(window.innerWidth);
 
-  public isSmallScreen$ = this.screenWidth$.pipe(
+  isSmallScreen$ = this.screenWidth$.pipe(
     map((width) => width < 1000),
     distinctUntilChanged()
   );
@@ -25,8 +25,7 @@ export class ScreenService {
   private setScreenWidthChanges(): void {
     fromEvent(window, 'resize')
       .pipe(
-        map(({ target }) => target as Window),
-        map(({ innerWidth }) => innerWidth),
+        map(({ target }) => (target as Window).innerWidth),
         distinctUntilChanged(),
         auditTime(500)
       )

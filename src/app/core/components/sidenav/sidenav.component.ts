@@ -1,17 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 
-import { MatIconModule } from '@angular/material/icon';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
+import { MatIconModule } from '@angular/material/icon';
 import { ScreenService } from '../../services/screen';
+import { TableFormComponent } from '../table-form';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatSidenavModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+
+    TableFormComponent,
+  ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
 })

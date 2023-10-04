@@ -1,0 +1,17 @@
+table {
+  width: 83vw;
+
+  th,
+  td {
+    text-align: center !important;
+  }
+}
+
+.th-description {
+  width: 50%;
+}
+
+mat-form-field {
+  margin: 10px 0;
+  width: 100%;
+}
