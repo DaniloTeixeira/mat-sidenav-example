@@ -1,3 +1,5 @@
+@import "src/assets/variables.scss";
+
 mat-sidenav-container {
   position: absolute;
   top: 0;
@@ -16,7 +18,8 @@ mat-sidenav-content {
 
 mat-sidenav {
   width: 270px;
-  background-color: indigo;
+
+  background-color: $primary-green;
 }
 
 .open-close-sidenav-container {
@@ -49,8 +52,9 @@ h1 {
 }
 
 h3 {
+  font-weight: 500;
   margin-top: 2rem;
-  color: #f1f1f1;
+  color: $primary-gold;
 }
 
 small {
@@ -59,7 +63,5 @@ small {
 
 main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+  justify-content: center;
 }

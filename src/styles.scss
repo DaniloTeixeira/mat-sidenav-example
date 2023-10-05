@@ -1,3 +1,5 @@
+@import "src/assets/variables.scss";
+
 html,
 body {
   height: 100%;
@@ -10,4 +12,27 @@ body {
 
 .mat-mdc-form-field-subscript-wrapper {
   display: none;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: #fff !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #fff !important;
+}
+
+.primary-green-color {
+  color: $primary-green !important;
+}
+
+.primary-green-bg {
+  background-color: $primary-green !important;
+}
+
+.primary-gold-color {
+  color: $primary-gold !important;
+}
+
+.primary-gold-bg {
+  background-color: $primary-gold !important;
 }

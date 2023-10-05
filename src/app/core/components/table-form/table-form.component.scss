@@ -1,5 +1,13 @@
+@import "src/assets/variables.scss";
+
 table {
-  width: 83vw;
+  width: 80vw;
+  margin: 2rem 0;
+
+  th {
+    color: $primary-gold;
+    background-color: $primary-green;
+  }
 
   th,
   td {
@@ -14,4 +22,10 @@ table {
 mat-form-field {
   margin: 10px 0;
   width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
 }

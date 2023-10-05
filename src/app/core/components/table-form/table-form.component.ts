@@ -1,77 +1,83 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import {
+  FormArray,
+  FormsModule,
+  NonNullableFormBuilder,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { CHECKLIST } from 'src/app/data/checklist';
+import { Checklist } from 'src/app/interfaces/Checklist';
 
 @Component({
   selector: 'app-table-form',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
+    CommonModule,
+    CommonModule,
     ReactiveFormsModule,
 
-    MatFormFieldModule,
-    MatSelectModule,
     MatTableModule,
-    TextFieldModule,
     MatInputModule,
+    TextFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
   templateUrl: './table-form.component.html',
   styleUrls: ['./table-form.component.scss'],
 })
-export class TableFormComponent {
-  form!: FormGroup;
+export class TableFormComponent implements OnInit {
+  private fb = inject(NonNullableFormBuilder);
 
-  dataSource = [
-    {
-      id: 1,
-      description: 'Item 01',
-    },
-    {
-      id: 2,
-      description: 'Item 02',
-    },
-    {
-      id: 3,
-      description: 'Item 03',
-    },
-    {
-      id: 4,
-      description: 'Item 04',
-    },
-    {
-      id: 5,
-      description: 'Item 05',
-    },
-    {
-      id: 6,
-      description: 'Item 06',
-    },
-    {
-      id: 7,
-      description: 'Item 07',
-    },
-    {
-      id: 8,
-      description: 'Item 08',
-    },
-    {
-      id: 9,
-      description: 'Item 09',
-    },
-    {
-      id: 10,
-      description: 'Item 010',
-    },
-  ];
+  form = this.buildForm();
+
+  dataSource = new MatTableDataSource<Checklist>();
 
   displayedColumns = ['id', 'description', 'status', 'considerations'];
 
-  onSubmit(): void {}
+  get checklistFormArray(): FormArray {
+    return this.form.controls.checklist as FormArray;
+  }
+
+  ngOnInit(): void {
+    this.getChecklist();
+  }
+
+  onSubmit(): void {
+    console.log(this.checklistFormArray.value);
+  }
+
+  private getChecklist(): void {
+    this.dataSource.data = CHECKLIST;
+
+    this.createFormArray(CHECKLIST);
+  }
+
+  private buildForm() {
+    return this.fb.group({
+      checklist: this.fb.array([]),
+    });
+  }
+
+  private createFormArray(checklist: Checklist[]): void {
+    checklist.forEach((item) => {
+      this.checklistFormArray.push(
+        this.fb.group({
+          id: item.id,
+          description: item.description,
+          status: '',
+          comment: '',
+        })
+      );
+    });
+  }
 }
