@@ -1,0 +1,29 @@
+<mat-form-field>
+  <mat-label> Categoria </mat-label>
+  <mat-icon matSuffix class="darkgrey-icon">event</mat-icon>
+  <mat-select [formControl]="myControl">
+    <mat-select-trigger>
+      <mat-icon [class]="myControl.value?.['color']"> circle </mat-icon>
+      {{ myControl.value?.['title']}}
+    </mat-select-trigger>
+    <mat-option [value]="categories[0]">
+      <mat-icon class="darkgrey-icon"> circle </mat-icon>
+      Não iniciado
+    </mat-option>
+
+    <mat-option [value]="categories[1]">
+      <mat-icon class="orange-icon"> circle </mat-icon>
+      Pendente
+    </mat-option>
+
+    <mat-option [value]="categories[2]">
+      <mat-icon class="blue-icon"> circle </mat-icon>
+      Em andamento
+    </mat-option>
+
+    <mat-option [value]="categories[3]">
+      <mat-icon class="green-icon"> circle </mat-icon>
+      Concluído
+    </mat-option>
+  </mat-select>
+</mat-form-field>
