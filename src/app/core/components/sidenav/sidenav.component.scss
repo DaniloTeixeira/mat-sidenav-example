@@ -27,7 +27,6 @@ mat-sidenav {
   align-items: center;
 
   width: 100%;
-  height: 60px;
   padding: 20px 0;
   background-color: #fff;
 
@@ -64,4 +63,36 @@ small {
 main {
   display: flex;
   justify-content: center;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 0 30px;
+
+  & a {
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+
+    &:after {
+      display: block;
+      margin-top: 5px;
+      content: "";
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scaleX(0.5);
+      transition: transform 300ms ease-in-out;
+    }
+
+    &:hover {
+      transition: ease-in-out 300ms;
+
+      &:after {
+        transform: scaleX(2);
+      }
+    }
+  }
 }

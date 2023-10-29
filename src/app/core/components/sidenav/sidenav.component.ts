@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 import { ScreenService } from '../../services/screen';
 import { TableFormComponent } from '../table-form';
 
@@ -13,6 +14,7 @@ import { TableFormComponent } from '../table-form';
   selector: 'app-sidenav',
   standalone: true,
   imports: [
+    RouterModule,
     CommonModule,
     MatIconModule,
     MatButtonModule,
@@ -21,7 +23,7 @@ import { TableFormComponent } from '../table-form';
     TableFormComponent,
   ],
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss'],
+  styleUrls: [ './sidenav.component.scss' ],
 })
 export class SidenavComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
