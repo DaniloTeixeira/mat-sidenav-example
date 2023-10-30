@@ -23,28 +23,28 @@ export class MatSelectComponent {
       title: 'Não iniciado',
       description: '',
       eventDate: new Date(),
-      color: 'darkgrey-icon'
+      color: '#808080'
     },
     {
       idReminder: 1,
       title: 'Pendente',
       description: '',
       eventDate: new Date(),
-      color: 'orange-icon'
+      color: '#ffa500'
     },
     {
       idReminder: 2,
       title: 'Em andamento',
       description: '',
       eventDate: new Date(),
-      color: 'blue-icon'
+      color: '#0000ff'
     },
     {
       idReminder: 3,
       title: 'Concluído',
       description: '',
       eventDate: new Date(),
-      color: 'green-icon'
+      color: '#008000'
     },
   ];
 

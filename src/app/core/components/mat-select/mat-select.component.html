@@ -3,7 +3,7 @@
   <mat-icon matSuffix class="darkgrey-icon">event</mat-icon>
   <mat-select [formControl]="myControl">
     <mat-select-trigger>
-      <mat-icon [class]="myControl.value?.['color']"> circle </mat-icon>
+      <mat-icon [style.color]="myControl.value?.['color']"> circle </mat-icon>
       {{ myControl.value?.['title']}}
     </mat-select-trigger>
     <mat-option [value]="categories[0]">
