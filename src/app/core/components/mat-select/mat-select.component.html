@@ -1,7 +1,6 @@
 <form [formGroup]="form">
   <mat-form-field>
-    <mat-label> Categoria </mat-label>
-    <mat-icon matSuffix class="darkgrey-icon">event</mat-icon>
+    <mat-label> Categoria do evento </mat-label>
     <mat-select formControlName="myControl">
       <mat-select-trigger>
         <mat-icon [style.color]="form.controls.myControl.value?.['color']">

@@ -42,7 +42,7 @@ export class TableFormComponent implements OnInit {
 
   dataSource = new MatTableDataSource<Checklist>();
 
-  displayedColumns = ['id', 'description', 'status', 'considerations'];
+  displayedColumns = ['idQuestion', 'question', 'status', 'considerations'];
 
   get checklistFormArray(): FormArray {
     return this.form.controls.checklist as FormArray;
@@ -72,8 +72,8 @@ export class TableFormComponent implements OnInit {
     checklist.forEach((item) => {
       this.checklistFormArray.push(
         this.fb.group({
-          id: item.id,
-          description: item.description,
+          idQuestion: item.idQuestion,
+          question: item.question,
           status: '',
           comment: '',
         })

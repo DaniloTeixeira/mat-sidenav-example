@@ -1,42 +1,26 @@
 export const CHECKLIST = [
   {
-    id: 1,
-    description: 'Item 01',
+    idQuestion: 1,
+    question: "Exames Médicos Atualizados e Presentes na Unidade"
   },
   {
-    id: 2,
-    description: 'Item 02',
+    idQuestion: 2,
+    question: "Treinamento em Boas Práticas e 5s"
   },
   {
-    id: 3,
-    description: 'Item 03',
+    idQuestion: 3,
+    question: "Diálogos de Segurança"
   },
   {
-    id: 4,
-    description: 'Item 04',
+    idQuestion: 4,
+    question: "Diálogos da Qualidade"
   },
   {
-    id: 5,
-    description: 'Item 05',
+    idQuestion: 5,
+    question: "Presença de Documentação do Responsável Técnico - RT (RG, CPF e CRN)"
   },
   {
-    id: 6,
-    description: 'Item 06',
-  },
-  {
-    id: 7,
-    description: 'Item 07',
-  },
-  {
-    id: 8,
-    description: 'Item 08',
-  },
-  {
-    id: 9,
-    description: 'Item 09',
-  },
-  {
-    id: 10,
-    description: 'Item 010',
-  },
+    idQuestion: 6,
+    question: "Presença de comprovante de higienização do ducto da coifa e documentos da empresa"
+  }
 ];

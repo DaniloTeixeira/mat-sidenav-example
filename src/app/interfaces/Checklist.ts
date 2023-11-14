@@ -1,6 +1,6 @@
 export interface Checklist {
-  id?: number;
-  description?: string;
+  idQuestion: number;
+  question: string;
   status?: string;
   comment?: string;
 }
