@@ -1,27 +1,22 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <table
-    mat-table
-    [dataSource]="checklistFormArray.controls"
-    formArrayName="checklist"
-    class="mat-elevation-z6"
-  >
+  <table mat-table [dataSource]="checklistFormArray.controls" formArrayName="checklist" class="mat-elevation-z6">
     <ng-container matColumnDef="idQuestion">
       <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let row; index as i" #idRow>
+      <td mat-cell data-cell="ID" *matCellDef="let row; index as i" #idRow>
         {{ dataSource.data[i].idQuestion }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="question">
       <th mat-header-cell *matHeaderCellDef class="th-question">Pergunta</th>
-      <td mat-cell *matCellDef="let row; index as i">
+      <td mat-cell data-cell="Pergunta" *matCellDef="let row; index as i">
         {{ dataSource.data[i].question }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>Status</th>
-      <td mat-cell *matCellDef="let row; index as i" [formGroupName]="i">
+      <td mat-cell data-cell="Status" *matCellDef="let row; index as i" [formGroupName]="i">
         <mat-form-field>
           <mat-label>Defina o Status</mat-label>
           <mat-select formControlName="status">
@@ -35,16 +30,10 @@
 
     <ng-container matColumnDef="considerations">
       <th mat-header-cell *matHeaderCellDef>Considerações Adicionais</th>
-      <td mat-cell *matCellDef="let row; index as i" [formGroupName]="i">
+      <td mat-cell data-cell="Informações Adicionais" *matCellDef="let row; index as i" [formGroupName]="i">
         <mat-form-field>
-          <textarea
-            formControlName="comment"
-            matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"
-          ></textarea>
+          <textarea formControlName="comment" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
         </mat-form-field>
       </td>
     </ng-container>
@@ -57,11 +46,7 @@
     <button mat-stroked-button type="button" class="primary-green-color me-3">
       VOLTAR
     </button>
-    <button
-      mat-raised-button
-      type="submit"
-      class="primary-green-bg primary-gold-color"
-    >
+    <button mat-raised-button type="submit" class="primary-green-bg primary-gold-color">
       SALVAR
     </button>
   </div>

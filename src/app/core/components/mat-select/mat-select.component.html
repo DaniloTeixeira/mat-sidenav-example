@@ -3,13 +3,6 @@
     <mat-label> Categoria do evento </mat-label>
     <mat-select formControlName="myControl">
       <mat-select-trigger>
-        <mat-icon [style.color]="form.controls.myControl.value?.['color']">
-          circle
-        </mat-icon>
-        {{ form.controls.myControl.value?.['title'] }}
-      </mat-select-trigger>
-
-      <mat-select-trigger>
         <mat-icon [style.color]="form.controls.myControl.value?.color">
           circle
         </mat-icon>

@@ -29,3 +29,54 @@ mat-form-field {
   justify-content: space-between;
   margin: 1rem 0;
 }
+
+/* REPONSIVIDADE DAS TABELAS */
+
+table:not(.table-not-responsible) {
+  @media (min-width: 921px) {
+    th,
+    td {
+      text-align: center !important;
+    }
+  }
+
+  @media (max-width: 920px) {
+    th {
+      display: none;
+    }
+
+    td:not(.td-no-data) {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: 20ch auto;
+      align-items: center;
+      padding: 0.5rem;
+      margin: 0 1rem;
+      border: none;
+      font-size: 13px;
+      text-align: start !important;
+      border-radius: 0 0 5px 5px;
+
+      &:first-child {
+        padding-top: 1rem;
+        border-top: 1px solid $primary-gold;
+        background-color: #fbfbfb;
+      }
+
+      &:before {
+        content: attr(data-cell) ":";
+        font-weight: 600;
+        color: $primary-green;
+      }
+    }
+  }
+
+  .div-mat-card__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-card.mat-card__table {
+    max-width: 600px;
+  }
+}

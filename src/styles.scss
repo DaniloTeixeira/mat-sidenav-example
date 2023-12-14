@@ -36,3 +36,9 @@ body {
 .primary-gold-bg {
   background-color: $primary-gold !important;
 }
+
+@media (max-width: 920px) {
+  thead {
+    display: none !important;
+  }
+}

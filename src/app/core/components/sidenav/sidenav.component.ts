@@ -23,7 +23,7 @@ import { TableFormComponent } from '../table-form';
     TableFormComponent,
   ],
   templateUrl: './sidenav.component.html',
-  styleUrls: [ './sidenav.component.scss' ],
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
@@ -50,7 +50,7 @@ export class SidenavComponent implements OnInit {
     this.screenWidth$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((width) => {
-        if (width <= 1000) {
+        if (width <= 1300) {
           this.opened = false;
           return;
         }

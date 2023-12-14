@@ -2,9 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import {
   FormArray,
+  FormGroup,
   FormsModule,
   NonNullableFormBuilder,
-  ReactiveFormsModule,
+  ReactiveFormsModule
 } from '@angular/forms';
 
 import { TextFieldModule } from '@angular/cdk/text-field';
@@ -15,6 +16,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CHECKLIST } from 'src/app/data/checklist';
 import { Checklist } from 'src/app/interfaces/Checklist';
+
+interface Question {
+  idQuestion: number,
+  question: string,
+  status: string,
+  observacao: string,
+}
 
 @Component({
   selector: 'app-table-form',
@@ -39,6 +47,7 @@ export class TableFormComponent implements OnInit {
   private fb = inject(NonNullableFormBuilder);
 
   form = this.buildForm();
+  form2!: FormGroup;
 
   dataSource = new MatTableDataSource<Checklist>();
 
@@ -60,6 +69,21 @@ export class TableFormComponent implements OnInit {
     this.dataSource.data = CHECKLIST;
 
     this.createFormArray(CHECKLIST);
+  }
+
+  // Buildar o form já com os valores (TESTE)
+  private buildForm2(questions: Question[]): void {
+    this.form2 = this.fb.group({
+      questionsFormArray: this.fb.array(
+        questions.map((item) => this.fb.group({
+          idQuestion: item.idQuestion,
+          question: item.question,
+          status: '',
+          observacao: '',
+        })
+        )
+      )
+    });
   }
 
   private buildForm() {

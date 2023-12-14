@@ -14,7 +14,7 @@ export class ScreenService {
   screenWidth$ = new BehaviorSubject(window.innerWidth);
 
   isSmallScreen$ = this.screenWidth$.pipe(
-    map((width) => width < 1000),
+    map((width) => width <= 1300),
     distinctUntilChanged()
   );
 
