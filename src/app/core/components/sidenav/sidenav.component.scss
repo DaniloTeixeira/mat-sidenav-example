@@ -88,10 +88,10 @@ main {
     }
 
     &:hover {
-      transition: ease-in-out 300ms;
+      transition: linear;
 
       &:after {
-        transform: scaleX(2);
+        transform: scaleX(1.1);
       }
     }
   }

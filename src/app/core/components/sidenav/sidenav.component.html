@@ -1,9 +1,6 @@
 <mat-sidenav-container>
-  <mat-sidenav
-    [opened]="opened"
-    (openedChange)="setSidenavStatus($event)"
-    [mode]="(isSmallScreen$ | async) ? 'over' : 'side'"
-  >
+  <mat-sidenav [opened]="opened" (openedChange)="setSidenavStatus($event)"
+    [mode]="(isSmallScreen$ | async) ? 'over' : 'side'">
     <h3>Conteúdo do Sidenav</h3>
 
     <div class="links-container">
@@ -22,7 +19,7 @@
     </header>
 
     <main>
-      <router-outlet />
+      <ng-content />
     </main>
 
     <footer>
